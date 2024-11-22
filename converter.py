@@ -13,8 +13,20 @@ def binToDec(num):
         index = index + 1
     return result
 
-def decToBin():
-    return 0
+def decToBin(num):
+    highestSquare = 0
+    solution = ""
+    while 2 ** highestSquare < num:
+        highestSquare += 1
+    for i in range(highestSquare, -1, -1):
+        if 2 ** i <= num:
+            num -= 2**i
+            solution += "1"
+        else:
+            solution += "0"
+    solution = int(solution)
+    return solution
+
 
 def hexToDec():
     return 0
@@ -52,7 +64,8 @@ def verifyBin():
 #mainMenu
 def main():
     #create menu
-    print(binToDec(1011101))
+    num = inputInt("enter a number ")
+    print(decToBin(num))
 
 if __name__ == "__main__":
     main()
