@@ -58,8 +58,15 @@ def verifyDec():
 def verifyHex():
     return 0
 
-def verifyBin():
-    return 0
+def verifyBin(num):
+    workingNum = num
+    while workingNum > 0:
+        if workingNum % 10 == 0 or workingNum % 10 == 1:
+            pass
+        else: 
+            return False
+        workingNum = workingNum // 10
+    return True
 
 #mainMenu
 def main():
@@ -72,10 +79,20 @@ def main():
         choice = inputInt("option: ")
 
         if choice == 1:
+
             num = inputInt("please enter a decimal number: ")
+            while num <0:
+                print("Negative numbers are not currently supported, please enter a positive number")
+                num = inputInt("please enter a decimal number: ")
             print(decToBin(num))
         elif choice == 2:
             num = inputInt("please enter a binary number: ")
+            BinVerified = False
+            BinVerified = verifyBin(num)
+            while not BinVerified:
+                print("[ERROR] input may only be a binary number (1 or 0)")
+                num = inputInt("please enter a binary number: ")
+                BinVerified = verifyBin(num)
             print(binToDec(num))
         elif choice == 0:
             exit(0)
