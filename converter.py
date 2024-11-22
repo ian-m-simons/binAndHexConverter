@@ -1,40 +1,50 @@
 
 
 #features
-def binToDec():
-    continue
+def binToDec(num):
+    index = 0
+    result = 0
+    while num > 0:
+        if num % 10 == 1:
+            result += 2**index
+        else:
+            pass
+        num = num // 10
+        index = index + 1
+    return result
 
 def decToBin():
-    continue
+    return 0
 
 def hexToDec():
-    continue
+    return 0
 
 def decToHex():
-    continue
+    return 0
 
 def binToHex():
-    continue
+    return 0
 
 def hexToBin():
-    continue
+    return 0
 
 #input verification functions
 def inputInt():
-    continue
+    return 0
 
 def verifyDec():
-    continue
+    return 0
 
 def verifyHex():
-    continue
+    return 0
 
 def verifyBin():
-    continue
+    return 0
 
 #mainMenu
 def main():
     #create menu
+    print(binToDec(1011101))
 
 if __name__ == "__main__":
     main()
