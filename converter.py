@@ -29,8 +29,16 @@ def hexToBin():
     return 0
 
 #input verification functions
-def inputInt():
-    return 0
+def inputInt(prompt):
+    success = False
+    while (not success):
+        num = input(prompt)
+        try:
+            num = int(num)
+            success = True
+        except:
+            print("[ERROR] Input must be an integer")
+    return num
 
 def verifyDec():
     return 0
