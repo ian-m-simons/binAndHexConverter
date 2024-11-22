@@ -31,8 +31,12 @@ def decToBin(num):
 def hexToDec():
     return 0
 
-def decToHex():
-    return 0
+def decToHex(num):
+    highestHex = 0
+    solution = ""
+    while 16 ** highestHex <num:
+        highestHex += 1
+    return highestHex
 
 def binToHex():
     return 0
@@ -75,6 +79,7 @@ def main():
         print("Please select an option below")
         print("1) Convert decimal to binary")
         print("2) Convert binary to decimal")
+        print("3) Convert decimal to hexadecimal")
         print("0) exit")
         choice = inputInt("option: ")
 
@@ -94,6 +99,9 @@ def main():
                 num = inputInt("please enter a binary number: ")
                 BinVerified = verifyBin(num)
             print(binToDec(num))
+        elif choice == 3:
+            num = inputInt("please enter a decimal number: ")
+            print(decToHex(num))
         elif choice == 0:
             exit(0)
         else:
