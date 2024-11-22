@@ -27,6 +27,22 @@ def decToBin(num):
     solution = int(solution)
     return solution
 
+def AtoZ(num):
+    if num == 10:
+        return "A"
+    elif num == 11:
+        return "B"
+    elif num == 12:
+        return "C"
+    elif num == 13:
+        return "D"
+    elif num == 14:
+        return "E"
+    elif num == 15:
+        return "F"
+    else:
+        print("congrats you managed to break my code please submit bug report including all input used")
+        exit(0)
 
 def hexToDec():
     return 0
@@ -34,9 +50,24 @@ def hexToDec():
 def decToHex(num):
     highestHex = 0
     solution = ""
-    while 16 ** highestHex <num:
+    while 16 ** highestHex <= num:
         highestHex += 1
-    return highestHex
+    for i in range(highestHex, 0, -1):
+        digit = num % 16
+        if digit >9:
+            solution = AtoZ(digit) + solution
+        else:
+            solution = str(digit) + solution
+        num = num // 16
+        '''if 16**highestHex <= num:
+            digit = num // 16**highestHex
+            if digit > 9:
+                solution += AtoZ(digit)
+            else:
+                solution += str(digit)
+            num = num - 16**digit'''
+    return solution
+    
 
 def binToHex():
     return 0
