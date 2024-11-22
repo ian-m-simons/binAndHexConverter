@@ -63,9 +63,24 @@ def verifyBin():
 
 #mainMenu
 def main():
-    #create menu
-    num = inputInt("enter a number ")
-    print(decToBin(num))
+    print("Welcome!")
+    while True:
+        print("Please select an option below")
+        print("1) Convert decimal to binary")
+        print("2) Convert binary to decimal")
+        print("0) exit")
+        choice = inputInt("option: ")
+
+        if choice == 1:
+            num = inputInt("please enter a decimal number: ")
+            print(decToBin(num))
+        elif choice == 2:
+            num = inputInt("please enter a binary number: ")
+            print(binToDec(num))
+        elif choice == 0:
+            exit(0)
+        else:
+            print("[Error] Invalid option")
 
 if __name__ == "__main__":
     main()
