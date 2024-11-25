@@ -44,7 +44,49 @@ def AtoZ(num):
         print("congrats you managed to break my code please submit bug report including all input used")
         exit(0)
 
-def hexToDec():
+def 10to15(num):
+    if num = "A"
+        return 10
+    elif num == "B":
+        return 11
+    elif num == "C":
+        return 12
+    elif num == "D":
+        return 13
+    elif num == "E":
+        return 14
+    elif num == "F":
+        return 15
+    else:
+        print("congrats you managete to break my code, please submit a bug report including all input used")
+        exit(0)
+
+
+def hexToDec(numAsString):
+    solution = 0
+    index = 0
+    while len(numAsString) > 0:
+        if len(numAsString) == 1:
+            workingNum = numAsString
+            numAsString = ""
+            try:
+                workingNum = int(workingNum)
+                solution += workingNum * (16 ** index)
+            except:
+                workingNum = 10to15(workingNum)
+                workingNum = int(workingNum)
+                solution += (workingNum * (16 ** index)
+        else:
+            workingNum = numAsString[-1]
+            numAsString = numAsString[0:-2]
+            try:
+                workingNum = int(workingNum)
+                solution += (workingNum * (16 ** index))
+            except:
+                workingNum = 10to15(workingNum)
+                workingNum = int(workingNum)
+                solution += (workingNum * (16 ** index))
+        index += 1
     return 0
 
 def decToHex(num):
