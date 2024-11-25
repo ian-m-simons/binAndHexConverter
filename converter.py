@@ -45,17 +45,17 @@ def AtoZ(num):
         exit(0)
 
 def overTen(num):
-    if num == "A":
+    if num.upper() == "A":
         return 10
-    elif num == "B":
+    elif num.upper() == "B":
         return 11
-    elif num == "C":
+    elif num.upper() == "C":
         return 12
-    elif num == "D":
+    elif num.upper() == "D":
         return 13
-    elif num == "E":
+    elif num.upper() == "E":
         return 14
-    elif num == "F":
+    elif num.upper() == "F":
         return 15
     else:
         print("congrats you managete to break my code, please submit a bug report including all input used")
@@ -129,11 +129,29 @@ def inputInt(prompt):
             print("[ERROR] Input must be an integer")
     return num
 
-def verifyDec():
-    return 0
-
-def verifyHex():
-    return 0
+def verifyHex(num):
+    for i in num:
+        try:
+            i = int(i)
+            if (i > -1 and i <10):
+                pass
+        except:
+            if i.upper() == "A":
+                pass
+            elif i.upper() == "B":
+                pass
+            elif i.upper() == "C":
+                pass
+            elif i.upper() == "D":
+                pass
+            elif i.upper() == "E":
+                pass
+            elif i.upper() == "F":
+                pass
+            else:
+                return False
+    return True
+    
 
 def verifyBin(num):
     workingNum = num
@@ -180,6 +198,11 @@ def main():
             exit(0)
         elif choice == 4:
             num = input("please enter a hexadecimal number: ")
+            correctHex = verifyHex(num)
+            while correctHex == False:
+                print("0[Error] input may only contain 0-9 and A-F")
+                num = input("please enter a hexadecimal number: ")
+                correctHex = verifyHex(num)
             print(hexToDec(num))
         else:
             print("[Error] Invalid option")
