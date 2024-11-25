@@ -5,7 +5,3 @@ how this works:
 		> decimal to binary
 		> decimal to hex
 
-todo:
-	> create hex to binary function
-	> implement input verification for input hex
-
