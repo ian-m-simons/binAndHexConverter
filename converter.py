@@ -171,7 +171,8 @@ def main():
         print("1) Convert decimal to binary")
         print("2) Convert binary to decimal")
         print("3) Convert decimal to hexadecimal")
-        print("4) Convert hexedecimal to decimal")
+        print("4) Convert hexadecimal to decimal")
+        print("5) convert binary to hexadecimal")
         print("0) exit")
         choice = inputInt("option: ")
 
@@ -204,6 +205,17 @@ def main():
                 num = input("please enter a hexadecimal number: ")
                 correctHex = verifyHex(num)
             print(hexToDec(num))
+        elif choice == 5:
+            num = inputInt("please enter a binary number: ")
+            BinVerified = False
+            BinVerified = verifyBin(num)
+            while not BinVerified:
+                print("[ERROR] input may only be a binary number (1 or 0)")
+                num = inputInt("please enter a binary number: ")
+                BinVerified = verifyBin(num)
+            num = binToDec(num)
+            num = decToHex(num)
+            print(num)
         else:
             print("[Error] Invalid option")
 
