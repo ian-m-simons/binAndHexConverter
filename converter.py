@@ -44,8 +44,8 @@ def AtoZ(num):
         print("congrats you managed to break my code please submit bug report including all input used")
         exit(0)
 
-def 10to15(num):
-    if num = "A"
+def overTen(num):
+    if num == "A":
         return 10
     elif num == "B":
         return 11
@@ -73,21 +73,21 @@ def hexToDec(numAsString):
                 workingNum = int(workingNum)
                 solution += workingNum * (16 ** index)
             except:
-                workingNum = 10to15(workingNum)
+                workingNum = overTen(workingNum)
                 workingNum = int(workingNum)
-                solution += (workingNum * (16 ** index)
+                solution += (workingNum * (16 ** index))
         else:
             workingNum = numAsString[-1]
-            numAsString = numAsString[0:-2]
+            numAsString = numAsString[0:-1]
             try:
                 workingNum = int(workingNum)
                 solution += (workingNum * (16 ** index))
             except:
-                workingNum = 10to15(workingNum)
+                workingNum = overTen(workingNum)
                 workingNum = int(workingNum)
                 solution += (workingNum * (16 ** index))
         index += 1
-    return 0
+    return solution
 
 def decToHex(num):
     highestHex = 0
@@ -153,6 +153,7 @@ def main():
         print("1) Convert decimal to binary")
         print("2) Convert binary to decimal")
         print("3) Convert decimal to hexadecimal")
+        print("4) Convert hexedecimal to decimal")
         print("0) exit")
         choice = inputInt("option: ")
 
@@ -177,6 +178,9 @@ def main():
             print(decToHex(num))
         elif choice == 0:
             exit(0)
+        elif choice == 4:
+            num = input("please enter a hexadecimal number: ")
+            print(hexToDec(num))
         else:
             print("[Error] Invalid option")
 
