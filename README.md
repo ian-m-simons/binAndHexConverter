@@ -4,4 +4,5 @@ how this works:
 		> binary to decimal
 		> decimal to binary
 		> decimal to hex
-
+todo:
+	>change hex to bin and bin to hex so that they don't rely on other functions
