@@ -4,6 +4,3 @@ how this works:
 		> binary to decimal
 		> decimal to binary
 		> decimal to hex
-todo:
-	> Hex input validation such that f is changed to F etc
-
