@@ -5,5 +5,5 @@ how this works:
 		> decimal to binary
 		> decimal to hex
 todo:
-	> change hex to bin and bin to hex so that they don't rely on other functions
-	> planning to use a table to map 4 bit sets to hex equivalent, should be way faster
+	> Hex input validation such that f is changed to F etc
+
