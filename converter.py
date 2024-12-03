@@ -111,8 +111,18 @@ def decToHex(num):
     return solution
     
 
-def binToHex():
-    return 0
+def binToHex(binNum):
+    table = {"0000":"0", "0001":"1", "0010":"2", "0011":"3", "0100":"4", "0101":"5", "0110":"6", "0111":"7", "1000":"8", "1001":"9", "1010":"A", "1011":"B", "1100":"C", "1101":"D", "1110":"E", "1111":"F"}
+    stringBin = str(binNum)
+    solution = ""
+    while len(stringBin) % 4 != 0:
+        stringBin = "0" + stringBin
+    for i in range(0, len(stringBin), 4):
+        subString = stringBin[i:i+4]
+        solution += table[subString]
+    return solution
+
+    
 
 def hexToBin():
     return 0
@@ -212,8 +222,7 @@ def main():
                 print("[ERROR] input may only be a binary number (1 or 0)")
                 num = inputInt("please enter a binary number: ")
                 BinVerified = verifyBin(num)
-            num = binToDec(num)
-            num = decToHex(num)
+            num = binToHex(num)
             print(num)
         elif choice == 6:
             num = input("please enter a hexadecimal number: ")
